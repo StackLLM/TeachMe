@@ -1,0 +1,110 @@
+/* cloneme: C-15, A-06 — notifications */
+
+.toasts {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(370px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 14px 14px 16px;
+  border-radius: 16px;
+  background: var(--couleur-surface-haute);
+  border: 1px solid var(--couleur-bordure);
+  box-shadow: var(--ombre-toast);
+}
+
+.toast__icone {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--couleur-secondaire-voile);
+  color: var(--couleur-secondaire);
+}
+
+.toast--succes .toast__icone {
+  background: var(--couleur-secondaire-voile);
+  color: var(--couleur-vert);
+}
+
+.toast--erreur .toast__icone {
+  background: var(--couleur-accent-voile);
+  color: var(--couleur-erreur);
+}
+
+.toast--info .toast__icone {
+  background: var(--couleur-peche);
+  color: var(--couleur-secondaire-fonce);
+}
+
+.toast__texte {
+  flex: 1;
+  min-width: 0;
+  padding-top: 1px;
+}
+
+.toast__titre {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--couleur-texte);
+}
+
+.toast__description {
+  margin-top: 2px;
+  font-size: var(--taille-petit);
+  line-height: 1.45;
+  color: var(--couleur-texte-doux);
+}
+
+.toast__action {
+  margin-top: 6px;
+  font-size: var(--taille-petit);
+  font-weight: 600;
+  color: var(--couleur-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.toast__action:hover {
+  color: var(--couleur-accent-fonce);
+}
+
+.toast__fermer {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: 50%;
+  color: var(--couleur-texte-faible);
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard);
+}
+
+.toast__fermer:hover {
+  background: var(--couleur-panneau);
+  color: var(--couleur-texte);
+}
+
+@media (max-width: 600px) {
+  .toasts {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+  }
+}

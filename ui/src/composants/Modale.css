@@ -1,0 +1,160 @@
+/* cloneme: C-14, A-03 — modales */
+
+@keyframes voile-sortie {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modale-sortie {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+.modale-voile {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: var(--couleur-voile-modale);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.modale-voile--sortie {
+  animation: voile-sortie var(--duree-rapide) var(--courbe-sortie) both;
+}
+
+.modale {
+  width: min(100%, 520px);
+  max-height: min(88vh, 880px);
+  display: flex;
+  flex-direction: column;
+  background: var(--couleur-surface-haute);
+  border-radius: var(--rayon-carte);
+  box-shadow: var(--ombre-modale);
+  overflow: hidden;
+}
+
+.modale--petite {
+  width: min(100%, 420px);
+}
+
+.modale--large {
+  width: min(100%, 760px);
+}
+
+.modale--sortie {
+  animation: modale-sortie var(--duree-rapide) var(--courbe-sortie) both;
+}
+
+.modale__entete {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 22px 14px;
+}
+
+.modale__icone {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-secondaire-voile);
+  color: var(--couleur-secondaire);
+}
+
+.modale__titres {
+  flex: 1;
+  min-width: 0;
+  padding-top: 1px;
+}
+
+.modale__titre {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: var(--lettres-titre);
+}
+
+.modale__sous-titre {
+  margin-top: 3px;
+  font-size: 13px;
+  color: var(--couleur-texte-doux);
+  line-height: 1.45;
+}
+
+.modale__fermer {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  margin: -4px -6px 0 0;
+  border-radius: 50%;
+  color: var(--couleur-texte-meta);
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard);
+}
+
+.modale__fermer:hover {
+  background: var(--couleur-panneau);
+  color: var(--couleur-texte);
+}
+
+.modale__corps {
+  padding: 8px 22px 22px;
+  overflow-y: auto;
+}
+
+.modale__pied {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid var(--couleur-bordure);
+  background: var(--couleur-surface);
+}
+
+@media (max-width: 600px) {
+  .modale-voile {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .modale {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: var(--rayon-panneau);
+  }
+
+  .modale__entete {
+    padding: 18px 18px 12px;
+  }
+
+  .modale__corps {
+    padding: 6px 18px 18px;
+  }
+
+  .modale__pied {
+    padding: 14px 18px;
+  }
+
+  .modale__pied .bouton {
+    flex: 1;
+  }
+}

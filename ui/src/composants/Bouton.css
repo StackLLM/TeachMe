@@ -1,0 +1,112 @@
+/* cloneme: C-12 — boutons */
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--rayon-pilule);
+  font-family: var(--police-texte);
+  font-size: var(--taille-bouton);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard),
+    border-color var(--duree-rapide) var(--courbe-standard),
+    box-shadow var(--duree-moyenne) var(--courbe-standard),
+    transform var(--duree-rapide) var(--courbe-standard);
+}
+
+.bouton:hover {
+  transform: translateY(-1px);
+}
+
+.bouton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.bouton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.bouton--primaire {
+  background: var(--couleur-accent);
+  color: var(--couleur-blanc);
+  box-shadow: var(--ombre-bouton);
+}
+
+.bouton--primaire:hover:not(:disabled) {
+  background: var(--couleur-accent-fonce);
+}
+
+.bouton--secondaire {
+  background: var(--couleur-secondaire);
+  color: var(--couleur-blanc);
+}
+
+.bouton--secondaire:hover:not(:disabled) {
+  background: var(--couleur-secondaire-fonce);
+}
+
+.bouton--fantome {
+  background: transparent;
+  color: var(--couleur-texte-doux);
+  box-shadow: inset 0 0 0 1px var(--couleur-bordure);
+}
+
+.bouton--fantome:hover:not(:disabled) {
+  background: var(--couleur-panneau);
+  color: var(--couleur-texte);
+}
+
+.bouton--danger {
+  background: var(--couleur-erreur);
+  color: var(--couleur-blanc);
+}
+
+.bouton--danger:hover:not(:disabled) {
+  filter: brightness(0.94);
+}
+
+.bouton--petit {
+  height: 34px;
+  padding: 0 14px;
+  font-size: 13px;
+  gap: 6px;
+}
+
+.bouton--large {
+  height: 52px;
+  padding: 0 30px;
+  font-size: 16px;
+}
+
+.bouton--pleine {
+  width: 100%;
+}
+
+.bouton--chargement {
+  cursor: progress;
+}
+
+.bouton__spinner {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  border-radius: 50%;
+  border: 2px solid var(--couleur-voile-clair);
+  border-top-color: var(--couleur-blanc);
+  animation: bouton-tourne 0.7s linear infinite;
+}
+
+.bouton--fantome .bouton__spinner {
+  border-color: var(--couleur-bordure-forte);
+  border-top-color: var(--couleur-secondaire);
+}

@@ -1,0 +1,129 @@
+/* cloneme: source unique des valeurs visuelles — miroir exact de palette.md
+   et des réglages globaux d'animation.md. Aucun composant n'écrit une couleur,
+   une police, une ombre ou une durée en dur. */
+:root {
+  /* Couleurs — surfaces */
+  --couleur-fond-page: #deedf0;
+  --couleur-fond-page-creux: #c9e2e8;
+  --couleur-fond-page-clair: #f3fafc;
+  --couleur-surface: #f4f9fb;
+  --couleur-surface-voile: rgba(244, 249, 251, 0.72);
+  --couleur-surface-carte: #f8fcfe;
+  --couleur-surface-haute: #ffffff;
+  --couleur-panneau: #e3f0f3;
+  --couleur-panneau-appui: #d7e9ed;
+
+  /* Couleurs — texte */
+  --couleur-texte: #0f2d2c;
+  --couleur-texte-doux: #557f86;
+  --couleur-texte-meta: #5a93a9;
+  --couleur-texte-faible: #8fb4bf;
+  --couleur-blanc: #ffffff;
+
+  /* Couleurs — accents */
+  --couleur-accent: #e76f69;
+  --couleur-accent-fonce: #d75f59;
+  --couleur-accent-voile: #fae2e1;
+  --couleur-accent-pale: #f6c9c6;
+  --couleur-secondaire: #2f7d8c;
+  --couleur-secondaire-fonce: #1f6170;
+  --couleur-secondaire-voile: #e1eef1;
+  --couleur-peche: #fae2c7;
+  --couleur-peche-fonce: #f4d3ae;
+  --couleur-vert: #2f7d6c;
+  --couleur-erreur: #c9544e;
+
+  /* Couleurs — voiles et lignes */
+  --couleur-voile-modale: rgba(15, 45, 44, 0.32);
+  --couleur-voile-clair: rgba(255, 255, 255, 0.72);
+  --couleur-bordure: #e2edf0;
+  --couleur-bordure-forte: #cfe3e8;
+
+  /* Ombres */
+  --ombre-panneau: 0 18px 44px rgba(47, 125, 140, 0.07);
+  --ombre-carte: 0 8px 22px rgba(47, 125, 140, 0.07);
+  --ombre-carte-survol: 0 16px 34px rgba(47, 125, 140, 0.14);
+  --ombre-bouton: 0 12px 26px rgba(231, 111, 105, 0.32);
+  --ombre-modale: 0 32px 90px rgba(15, 45, 44, 0.28);
+  --ombre-toast: 0 18px 40px rgba(15, 45, 44, 0.18);
+  --ombre-jour: 0 10px 24px rgba(244, 211, 174, 0.55);
+  --anneau-focus: 0 0 0 3px rgba(47, 125, 140, 0.28);
+
+  /* Typographie */
+  --police-texte: "Poppins", "Avenir Next", "Segoe UI", sans-serif;
+  --police-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --taille-base: 15px;
+  --taille-petit: 12px;
+  --taille-meta: 12.5px;
+  --taille-titre-section: 28px;
+  --taille-titre-page: 32px;
+  --taille-titre-carte: 18px;
+  --taille-nav: 15px;
+  --taille-logo: 22px;
+  --taille-bouton: 15px;
+  --interligne-serre: 1.2;
+  --interligne-normal: 1.55;
+  --lettres-titre: -0.02em;
+
+  /* Rayons */
+  --rayon-panneau: 34px;
+  --rayon-carte: 18px;
+  --rayon-petit: 12px;
+  --rayon-pilule: 999px;
+
+  /* Dimensions */
+  --largeur-sidebar: clamp(252px, 17vw, 300px);
+  --largeur-colonne: clamp(348px, 24vw, 440px);
+  --hauteur-entete: 94px;
+  --espace-panneau: 36px;
+  --espace-carte: 22px;
+  --gouttiere: 26px;
+  --flou-voile: 42px;
+
+  /* Animations — animation.md §Réglages globaux */
+  --duree-rapide: 160ms;
+  --duree-moyenne: 260ms;
+  --duree-lente: 420ms;
+  --courbe-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --courbe-sortie: cubic-bezier(0.4, 0, 1, 1);
+  --courbe-ressort: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --espace-panneau: 44px;
+    --espace-carte: 26px;
+    --gouttiere: 30px;
+    --taille-titre-section: 30px;
+    --taille-titre-page: 36px;
+  }
+}
+
+@media (max-width: 1180px) {
+  :root {
+    --largeur-sidebar: 224px;
+    --largeur-colonne: 316px;
+    --espace-panneau: 22px;
+    --taille-titre-section: 26px;
+    --taille-titre-page: 29px;
+  }
+}
+
+@media (max-width: 980px) {
+  :root {
+    --hauteur-entete: 84px;
+    --rayon-panneau: 26px;
+    --taille-titre-section: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --rayon-panneau: 22px;
+    --espace-panneau: 20px;
+    --taille-titre-section: 23px;
+    --taille-titre-page: 26px;
+    --gouttiere: 18px;
+    --espace-carte: 18px;
+  }
+}

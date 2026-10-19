@@ -1,0 +1,117 @@
+/* cloneme: C-14 — modale visio */
+
+.visio__formulaire {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.visio__apercu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--rayon-carte);
+  background: var(--couleur-panneau);
+}
+
+.visio__apercu-rond {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--couleur-surface-haute);
+  color: var(--couleur-secondaire);
+}
+
+.visio__apercu strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.visio__apercu small {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--taille-petit);
+  color: var(--couleur-texte-meta);
+}
+
+.visio__erreur {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-accent-voile);
+  color: var(--couleur-erreur);
+  font-size: var(--taille-petit);
+}
+
+.visio__note {
+  font-size: var(--taille-petit);
+  line-height: 1.5;
+  color: var(--couleur-texte-meta);
+}
+
+.visio__pret {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.visio__salle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: var(--rayon-carte);
+  background: var(--couleur-panneau);
+}
+
+.visio__salle-icone {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--couleur-secondaire);
+  color: var(--couleur-blanc);
+}
+
+.visio__salle-titre {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.visio__salle-seance {
+  margin-top: 2px;
+  font-size: var(--taille-meta);
+  color: var(--couleur-texte-meta);
+}
+
+.visio__badge {
+  margin-left: auto;
+  padding: 4px 8px;
+  border-radius: var(--rayon-pilule);
+  background: var(--couleur-peche);
+  color: var(--couleur-secondaire-fonce);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.visio__lien {
+  display: block;
+  padding: 12px 14px;
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-surface);
+  border: 1px dashed var(--couleur-bordure-forte);
+  color: var(--couleur-secondaire-fonce);
+  font-family: var(--police-mono);
+  font-size: 12px;
+  word-break: break-all;
+}

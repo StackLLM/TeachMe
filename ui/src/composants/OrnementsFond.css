@@ -1,0 +1,42 @@
+/* cloneme: C-24 — fond ornementé */
+
+.ornements {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 16% 18%, var(--couleur-fond-page-clair) 0%, transparent 40%),
+    radial-gradient(circle at 6% 64%, var(--couleur-fond-page-creux) 0%, transparent 42%),
+    radial-gradient(circle at 94% 72%, var(--couleur-fond-page-creux) 0%, transparent 44%),
+    var(--couleur-fond-page);
+}
+
+.ornements__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ornements__flou {
+  filter: blur(46px);
+}
+
+.ornements__flou--fort {
+  opacity: 0.85;
+}
+
+.ornements__creux {
+  fill: var(--couleur-fond-page-creux);
+}
+
+.ornements__clair {
+  fill: var(--couleur-fond-page-clair);
+}
+
+.ornements__traits {
+  fill: none;
+  stroke: var(--couleur-fond-page-creux);
+  stroke-width: 1.2;
+  opacity: 0.35;
+}

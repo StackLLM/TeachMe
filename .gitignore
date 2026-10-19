@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.tools/
+.npm-cache*/
+.DS_Store
+*.local
+ui/.vite/
+.cloneme/mesures/
+
+# Captures et mesures de la maquette Dribbble : non republiées (voir README, section Droits)
+.cloneme/
+.env
+.env.*
+!.env.example

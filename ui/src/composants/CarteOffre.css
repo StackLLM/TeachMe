@@ -1,0 +1,163 @@
+/* cloneme: C-11 — carte d'offre */
+
+.carte-offre {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 172px;
+  padding: 16px;
+  overflow: hidden;
+  text-align: left;
+  background: var(--couleur-surface-haute);
+  border-radius: 20px;
+  box-shadow: var(--ombre-carte);
+  transition:
+    transform var(--duree-moyenne) var(--courbe-standard),
+    box-shadow var(--duree-moyenne) var(--courbe-standard);
+}
+
+.carte-offre:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ombre-carte-survol);
+}
+
+.carte-offre__formes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.carte-offre__rose {
+  position: absolute;
+  top: -14px;
+  right: -20px;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: var(--couleur-accent-pale);
+}
+
+.carte-offre__point-corail {
+  position: absolute;
+  top: 34px;
+  right: 46px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--couleur-accent);
+}
+
+.carte-offre__point-sarcelle {
+  position: absolute;
+  right: 24px;
+  bottom: 42px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--couleur-secondaire);
+}
+
+.carte-offre__peche {
+  position: absolute;
+  left: -18px;
+  bottom: -22px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--couleur-peche);
+}
+
+.carte-offre__barre {
+  position: absolute;
+  height: 12px;
+  border-radius: var(--rayon-pilule);
+}
+
+.carte-offre__barre--sarcelle {
+  left: 18px;
+  bottom: 30px;
+  width: 48px;
+  background: var(--couleur-secondaire);
+  transform: rotate(-36deg);
+}
+
+.carte-offre__barre--corail {
+  left: 52px;
+  bottom: 12px;
+  width: 44px;
+  background: var(--couleur-accent);
+  transform: rotate(-36deg);
+}
+
+.carte-offre__texte {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 118px;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+  color: var(--couleur-texte);
+}
+
+.carte-offre__fleche {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: var(--couleur-texte);
+  transition: transform var(--duree-rapide) var(--courbe-standard);
+}
+
+.carte-offre:hover .carte-offre__fleche {
+  transform: translateX(3px);
+}
+
+.offre__liste {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 18px;
+}
+
+.offre__liste li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--couleur-texte-doux);
+}
+
+.offre__liste svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--couleur-vert);
+}
+
+.offre__prix {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: var(--lettres-titre);
+  color: var(--couleur-texte);
+}
+
+.offre__prix span {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--couleur-texte-meta);
+  letter-spacing: 0;
+}
+
+.offre__note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-panneau);
+  font-size: var(--taille-petit);
+  line-height: 1.45;
+  color: var(--couleur-texte-doux);
+}

@@ -1,0 +1,54 @@
+/* cloneme: C-25 — pastilles */
+
+.pastille {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 20px;
+  padding: 1px 8px;
+  border-radius: var(--rayon-pilule);
+  font-size: var(--taille-petit);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.pastille--corail {
+  background: var(--couleur-accent-voile);
+  color: var(--couleur-accent-fonce);
+}
+
+.pastille--rose {
+  background: var(--couleur-accent-pale);
+  color: var(--couleur-accent-fonce);
+}
+
+.pastille--peche {
+  background: var(--couleur-peche);
+  color: var(--couleur-secondaire-fonce);
+}
+
+.pastille--sarcelle {
+  background: var(--couleur-secondaire-voile);
+  color: var(--couleur-secondaire-fonce);
+}
+
+.pastille--succes {
+  background: var(--couleur-secondaire-voile);
+  color: var(--couleur-vert);
+}
+
+.pastille--neutre {
+  background: var(--couleur-panneau);
+  color: var(--couleur-texte-doux);
+}
+
+.pastille--ronde {
+  width: 34px;
+  height: 34px;
+  min-height: 0;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 12px;
+}

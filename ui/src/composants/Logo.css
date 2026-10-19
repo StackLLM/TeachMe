@@ -1,0 +1,52 @@
+/* cloneme: C-04 — logo */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--couleur-secondaire);
+  transition: opacity var(--duree-rapide) var(--courbe-standard);
+  border-radius: var(--rayon-petit);
+}
+
+.logo:hover {
+  opacity: 0.82;
+}
+
+.logo__marque {
+  width: 36px;
+  height: 40px;
+  flex: none;
+}
+
+.logo__tete {
+  fill: var(--couleur-accent);
+}
+
+.logo__bec {
+  fill: var(--couleur-accent-fonce);
+}
+
+.logo__corps {
+  fill: var(--couleur-secondaire);
+}
+
+.logo__oeil {
+  fill: var(--couleur-blanc);
+}
+
+.logo__pupille {
+  fill: var(--couleur-texte);
+}
+
+.logo__socle {
+  fill: var(--couleur-peche-fonce);
+}
+
+.logo__mot {
+  font-size: var(--taille-logo);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--couleur-secondaire);
+}

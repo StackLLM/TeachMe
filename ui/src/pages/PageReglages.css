@@ -1,0 +1,318 @@
+/* cloneme: P-06 — réglages */
+
+.page-reglages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reglages__grille {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+  gap: 18px;
+  align-items: start;
+}
+
+.reglages__formulaire {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  padding: 22px;
+  border-radius: var(--rayon-carte);
+  background: var(--couleur-surface-haute);
+  box-shadow: var(--ombre-carte);
+}
+
+.reglages__section {
+  padding: 18px 0;
+  border-top: 1px solid var(--couleur-bordure);
+}
+
+.reglages__section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.reglages__section-entete h2 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: var(--lettres-titre);
+}
+
+.reglages__section-entete p {
+  margin-top: 2px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--couleur-texte-meta);
+}
+
+.reglages__grille-champs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.reglages__pleine {
+  grid-column: 1 / -1;
+}
+
+.reglages__interrupteurs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+}
+
+.interrupteur-ligne {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--couleur-bordure);
+}
+
+.interrupteur-ligne:first-child {
+  border-top: 0;
+}
+
+.interrupteur-ligne__titre {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.interrupteur-ligne__description {
+  margin-top: 1px;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--couleur-texte-meta);
+}
+
+.interrupteur {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex: none;
+  border-radius: var(--rayon-pilule);
+  background: var(--couleur-bordure-forte);
+  transition: background-color var(--duree-rapide) var(--courbe-standard);
+}
+
+.interrupteur--actif {
+  background: var(--couleur-secondaire);
+}
+
+.interrupteur__pastille {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--couleur-surface-haute);
+  box-shadow: var(--ombre-carte);
+  transition: transform var(--duree-rapide) var(--courbe-standard);
+}
+
+.interrupteur--actif .interrupteur__pastille {
+  transform: translateX(18px);
+}
+
+.reglages__avertissement {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 9px 11px;
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-peche);
+  color: var(--couleur-secondaire-fonce);
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+.reglages__avertissement svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.reglages__erreur {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-accent-voile);
+  color: var(--couleur-erreur);
+  font-size: var(--taille-petit);
+}
+
+.reglages__pied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--couleur-bordure);
+}
+
+.reglages__pied-note {
+  font-size: 10.5px;
+  color: var(--couleur-texte-meta);
+}
+
+.reglages__cote {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--rayon-carte);
+  background: var(--couleur-surface-haute);
+  box-shadow: var(--ombre-carte);
+}
+
+.reglages__profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--couleur-bordure);
+  text-align: center;
+}
+
+.reglages__profil h2 {
+  margin-top: 6px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: var(--lettres-titre);
+}
+
+.reglages__profil p {
+  font-size: 11.5px;
+  color: var(--couleur-texte-meta);
+}
+
+.reglages__profil .pastille {
+  margin-top: 6px;
+}
+
+.reglages__resume {
+  display: flex;
+  flex-direction: column;
+}
+
+.reglages__resume div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px solid var(--couleur-bordure);
+}
+
+.reglages__resume div:first-child {
+  border-top: 0;
+}
+
+.reglages__resume dt {
+  flex: none;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--couleur-texte-faible);
+}
+
+.reglages__resume dd {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  font-size: 11px;
+  color: var(--couleur-texte-doux);
+}
+
+.reglages__cote-note {
+  margin-top: auto;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--couleur-texte-faible);
+}
+
+@media (max-width: 1300px) {
+  .reglages__grille {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reglages__cote {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .reglages__formulaire {
+    padding: 16px;
+  }
+
+  .reglages__grille-champs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reglages__pied {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reglages__pied .bouton {
+    width: 100%;
+  }
+
+  .interrupteur-ligne {
+    gap: 10px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .reglages__grille {
+    gap: 20px;
+  }
+
+  .reglages__formulaire {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .reglages__section {
+    padding: 20px;
+    border-top: 0;
+    border-radius: var(--rayon-carte);
+    background: var(--couleur-surface-haute);
+    box-shadow: var(--ombre-carte);
+  }
+
+  .reglages__section:first-child {
+    padding-top: 20px;
+  }
+
+  .reglages__pied {
+    grid-column: 1 / -1;
+    padding: 14px 18px;
+    border-top: 0;
+    border-radius: var(--rayon-carte);
+    background: var(--couleur-surface-haute);
+    box-shadow: var(--ombre-carte);
+  }
+
+  .reglages__erreur {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+}

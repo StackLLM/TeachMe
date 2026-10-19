@@ -1,0 +1,105 @@
+/* cloneme: C-08, A-05 — sélecteur de jour */
+
+.selecteur-jour {
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+}
+
+.jour {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  height: 74px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 16px;
+  color: var(--couleur-texte);
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard),
+    box-shadow var(--duree-moyenne) var(--courbe-standard);
+}
+
+.jour:hover {
+  background: var(--couleur-panneau);
+}
+
+.jour--actif {
+  background: var(--couleur-peche);
+  box-shadow: var(--ombre-jour);
+}
+
+.jour--actif:hover {
+  background: var(--couleur-peche-fonce);
+}
+
+.jour__numero {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.jour__libelle {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--couleur-texte-meta);
+}
+
+.jour--actif .jour__numero {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.jour--actif .jour__libelle {
+  color: var(--couleur-texte-doux);
+}
+
+.jour__points {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 6px;
+  margin-top: 1px;
+}
+
+.jour__point {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: point-pop var(--duree-moyenne) var(--courbe-ressort) both;
+}
+
+.jour__point--sarcelle {
+  background: var(--couleur-secondaire);
+}
+
+.jour__point--corail {
+  background: var(--couleur-accent);
+  animation-delay: 45ms;
+}
+
+@media (max-width: 1180px) {
+  .jour {
+    height: 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  .jour {
+    height: 64px;
+    border-radius: 14px;
+  }
+
+  .jour__numero {
+    font-size: 15px;
+  }
+
+  .jour__libelle {
+    font-size: 10px;
+  }
+}

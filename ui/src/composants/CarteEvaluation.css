@@ -1,0 +1,95 @@
+/* cloneme: C-20 — carte d'évaluation */
+
+.carte-evaluation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--rayon-carte);
+  background: var(--couleur-surface-haute);
+  box-shadow: var(--ombre-carte);
+}
+
+.carte-evaluation__entete {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.carte-evaluation__identite {
+  min-width: 0;
+  flex: 1;
+}
+
+.carte-evaluation__identite strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.carte-evaluation__identite span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 1px;
+  font-size: 10px;
+  color: var(--couleur-texte-meta);
+}
+
+.carte-evaluation__titre {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: var(--lettres-titre);
+}
+
+.carte-evaluation__extrait {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--couleur-texte-doux);
+}
+
+.carte-evaluation__retour {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-panneau);
+}
+
+.carte-evaluation__note {
+  flex: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--couleur-secondaire-fonce);
+}
+
+.carte-evaluation__retour p {
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--couleur-texte-doux);
+}
+
+.carte-evaluation__pied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--couleur-bordure);
+}
+
+.carte-evaluation__meta {
+  font-size: 10.5px;
+  color: var(--couleur-texte-meta);
+}

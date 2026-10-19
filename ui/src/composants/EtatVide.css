@@ -1,0 +1,39 @@
+/* cloneme: C-22 — états vides */
+
+.etat-vide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.etat-vide__icone {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  background: var(--couleur-panneau);
+  color: var(--couleur-secondaire);
+}
+
+.etat-vide__titre {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: var(--lettres-titre);
+}
+
+.etat-vide__texte {
+  max-width: 360px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--couleur-texte-doux);
+}
+
+.etat-vide .bouton {
+  margin-top: 10px;
+}

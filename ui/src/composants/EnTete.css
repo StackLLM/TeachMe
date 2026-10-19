@@ -1,0 +1,218 @@
+/* cloneme: C-03 — barre haute */
+
+.entete {
+  position: relative;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+  height: var(--hauteur-entete);
+  padding: 0 30px 0 28px;
+}
+
+.entete__mobile {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.entete__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.entete__recherche {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  min-width: 230px;
+  padding: 0 14px 0 16px;
+  border-radius: var(--rayon-pilule);
+  color: var(--couleur-texte-faible);
+  font-size: 14px;
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard);
+}
+
+.entete__recherche:hover {
+  background: var(--couleur-panneau);
+  color: var(--couleur-texte-meta);
+}
+
+.entete__recherche-texte {
+  font-weight: 400;
+}
+
+.entete__raccourci {
+  margin-left: auto;
+  padding: 2px 6px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 6px;
+  background: var(--couleur-surface-carte);
+  color: var(--couleur-texte-meta);
+  font-family: var(--police-texte);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.entete__bouton-icone {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: 50%;
+  color: var(--couleur-secondaire);
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard);
+}
+
+.entete__bouton-icone:hover {
+  background: var(--couleur-panneau);
+  color: var(--couleur-secondaire-fonce);
+}
+
+.entete__profil {
+  position: relative;
+  flex: none;
+}
+
+.entete__avatar {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  transition: background-color var(--duree-rapide) var(--courbe-standard);
+}
+
+.entete__avatar:hover {
+  background: var(--couleur-panneau);
+}
+
+.menu-profil {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  width: 262px;
+  padding: 8px;
+  border-radius: 16px;
+  background: var(--couleur-surface-haute);
+  box-shadow: var(--ombre-modale);
+  animation: modale-entree var(--duree-rapide) var(--courbe-standard) both;
+}
+
+.menu-profil__entete {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 8px 10px;
+}
+
+.menu-profil__identite {
+  min-width: 0;
+}
+
+.menu-profil__identite strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.menu-profil__identite span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11.5px;
+  color: var(--couleur-texte-meta);
+}
+
+.menu-profil__separateur {
+  height: 1px;
+  margin: 2px 6px 6px;
+  background: var(--couleur-bordure);
+}
+
+.menu-profil__lien {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: var(--rayon-petit);
+  color: var(--couleur-texte-doux);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard);
+}
+
+.menu-profil__lien:hover {
+  background: var(--couleur-panneau);
+  color: var(--couleur-texte);
+}
+
+.menu-profil__note {
+  margin: 6px 10px 4px;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--couleur-texte-faible);
+}
+
+@media (max-width: 980px) {
+  .entete {
+    height: var(--hauteur-entete);
+    padding: 0 16px;
+  }
+
+  .entete__mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  .entete__recherche {
+    min-width: 0;
+    padding: 0;
+    width: 44px;
+    justify-content: center;
+  }
+
+  .entete__recherche-texte,
+  .entete__raccourci {
+    display: none;
+  }
+
+  .entete__actions {
+    gap: 4px;
+  }
+}
+
+@media (max-width: 420px) {
+  .entete__mobile .logo__marque {
+    width: 30px;
+    height: 34px;
+  }
+
+  .entete__mobile .logo__mot {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .entete__mobile .logo__mot {
+    display: none;
+  }
+}

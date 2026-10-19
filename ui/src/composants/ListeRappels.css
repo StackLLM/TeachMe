@@ -1,0 +1,33 @@
+/* cloneme: C-10 — liste des rappels */
+
+.liste-rappels {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.liste-rappels__titre {
+  margin-bottom: 12px;
+}
+
+.liste-rappels__liste {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.liste-rappels .etat-vide {
+  padding: 24px 12px;
+  background: var(--couleur-surface-carte);
+  border-radius: var(--rayon-carte);
+}
+
+@media (max-width: 1180px) {
+  .liste-rappels__titre {
+    margin-bottom: 8px;
+  }
+
+  .liste-rappels__liste {
+    gap: 6px;
+  }
+}

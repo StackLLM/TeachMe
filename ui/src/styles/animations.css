@@ -1,0 +1,212 @@
+/* cloneme: A-01, A-02, A-03, A-05, A-06, A-07, A-08, A-09, A-10 — toutes les
+   animations partagées. Les durées et courbes viennent de tokens.css. */
+
+/* A-02 — entrée de page */
+@keyframes page-entree {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-entree {
+  animation: page-entree var(--duree-lente) var(--courbe-standard) both;
+}
+
+/* A-09 — cascade d'apparition des cartes */
+@keyframes carte-entree {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.cascade {
+  animation: carte-entree var(--duree-lente) var(--courbe-standard) both;
+  animation-delay: var(--cascade-delai, 0ms);
+}
+
+/* A-03 — voile et panneau des modales */
+@keyframes voile-entree {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modale-entree {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.voile-entree {
+  animation: voile-entree var(--duree-rapide) var(--courbe-standard) both;
+}
+
+.modale-entree {
+  animation: modale-entree var(--duree-moyenne) var(--courbe-ressort) both;
+}
+
+@keyframes tiroir-entree {
+  from {
+    transform: translateX(102%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.tiroir-entree {
+  animation: tiroir-entree var(--duree-moyenne) var(--courbe-standard) both;
+}
+
+/* A-08 — palette de recherche */
+@keyframes palette-entree {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.palette-entree {
+  animation: palette-entree var(--duree-rapide) var(--courbe-standard) both;
+}
+
+@keyframes resultat-entree {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.resultat-entree {
+  animation: resultat-entree var(--duree-rapide) var(--courbe-standard) both;
+  animation-delay: var(--resultat-delai, 0ms);
+}
+
+/* A-05 — la pastille du jour et ses deux points */
+@keyframes point-pop {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.point-pop {
+  animation: point-pop var(--duree-moyenne) var(--courbe-ressort) both;
+}
+
+/* A-06 / A-07 — entrée d'une notification et d'une carte */
+@keyframes toast-entree {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.toast-entree {
+  animation: toast-entree var(--duree-moyenne) var(--courbe-ressort) both;
+}
+
+@keyframes carte-nouvelle {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.carte-nouvelle {
+  animation: carte-nouvelle var(--duree-lente) var(--courbe-ressort) both;
+}
+
+@keyframes bouton-tourne {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* A-01 — transitions partagées. Chaque propriété est nommée. */
+.survol-carte {
+  transition:
+    transform var(--duree-moyenne) var(--courbe-standard),
+    box-shadow var(--duree-moyenne) var(--courbe-standard),
+    background-color var(--duree-rapide) var(--courbe-standard);
+}
+
+.survol-carte:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ombre-carte-survol);
+}
+
+.survol-couleur {
+  transition:
+    color var(--duree-rapide) var(--courbe-standard),
+    background-color var(--duree-rapide) var(--courbe-standard),
+    border-color var(--duree-rapide) var(--courbe-standard);
+}
+
+/* A-10 — mode animations réduites (système et bascule manuelle). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .survol-carte:hover {
+    transform: none;
+  }
+}
+
+html[data-animations='reduites'] *,
+html[data-animations='reduites'] *::before,
+html[data-animations='reduites'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-animations='reduites'] .survol-carte:hover {
+  transform: none;
+}

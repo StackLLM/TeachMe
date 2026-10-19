@@ -1,0 +1,31 @@
+/* cloneme: C-17 — avatar */
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--taille-avatar, 34px);
+  height: var(--taille-avatar, 34px);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--couleur-secondaire-voile);
+  color: var(--couleur-secondaire-fonce);
+  font-size: calc(var(--taille-avatar, 34px) * 0.34);
+  font-weight: 600;
+  line-height: 1;
+  user-select: none;
+}
+
+.avatar--anneau {
+  box-shadow: 0 0 0 2px var(--couleur-surface-carte);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar__initiales {
+  transform: translateY(0.02em);
+}

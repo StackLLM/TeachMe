@@ -1,0 +1,172 @@
+/* cloneme: C-07, A-05 — planning */
+
+.panneau-planning {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.planning__entete {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.planning__date-ligne {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.planning__date {
+  font-size: 13.5px;
+  color: var(--couleur-texte-meta);
+  line-height: 1.4;
+}
+
+.planning__calendrier {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: -6px;
+  border-radius: 9px;
+  color: var(--couleur-secondaire);
+  transition: background-color var(--duree-rapide) var(--courbe-standard);
+}
+
+.planning__calendrier:hover {
+  background: var(--couleur-panneau);
+}
+
+.panneau-planning .selecteur-jour {
+  margin-top: 12px;
+}
+
+.planning__liste {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.planning__vide {
+  margin-top: 12px;
+  color: var(--couleur-texte-doux);
+  font-size: 13px;
+}
+
+.mini-calendrier {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  width: 248px;
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--couleur-surface-haute);
+  box-shadow: var(--ombre-modale);
+  animation: modale-entree var(--duree-rapide) var(--courbe-standard) both;
+}
+
+.mini-calendrier__entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.mini-calendrier__entete strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mini-calendrier__fermer {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: var(--couleur-texte-meta);
+}
+
+.mini-calendrier__fermer:hover {
+  background: var(--couleur-panneau);
+  color: var(--couleur-texte);
+}
+
+.mini-calendrier__grille {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.mini-calendrier__jour-semaine {
+  padding: 4px 0;
+  text-align: center;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--couleur-texte-faible);
+}
+
+.mini-calendrier__jour {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--couleur-texte);
+  font-size: 11.5px;
+  line-height: 1;
+  transition:
+    background-color var(--duree-rapide) var(--courbe-standard),
+    color var(--duree-rapide) var(--courbe-standard);
+}
+
+.mini-calendrier__jour:disabled {
+  cursor: default;
+  color: var(--couleur-texte-faible);
+  opacity: 0.45;
+}
+
+.mini-calendrier__jour--plage {
+  background: var(--couleur-panneau);
+  color: var(--couleur-secondaire-fonce);
+  font-weight: 600;
+}
+
+.mini-calendrier__jour--plage:hover {
+  background: var(--couleur-panneau-appui);
+}
+
+.mini-calendrier__jour--actif,
+.mini-calendrier__jour--actif:hover {
+  background: var(--couleur-peche);
+  color: var(--couleur-texte);
+  font-weight: 700;
+  box-shadow: var(--ombre-jour);
+}
+
+.mini-calendrier__note {
+  margin-top: 8px;
+  font-size: 9.5px;
+  line-height: 1.4;
+  color: var(--couleur-texte-meta);
+}
+
+@media (max-width: 1180px) {
+  .planning__date {
+    font-size: 12.5px;
+  }
+
+  .panneau-planning .selecteur-jour {
+    margin-top: 8px;
+  }
+
+  .planning__liste {
+    gap: 6px;
+    margin-top: 8px;
+  }
+}
